@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.kwinlab.flutter_kpay_kit">
+
+    <application>
+        <activity
+            android:name="com.kbzbank.payment.sdk.callback.CallbackResultActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
