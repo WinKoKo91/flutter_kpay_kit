@@ -17,6 +17,7 @@ import java.util.Random;
 
 import io.flutter.Log;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
@@ -25,7 +26,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 
 /** FlutterKpayKitPlugin */
-public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler {
+public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native
   /// Android
   ///
@@ -68,10 +69,12 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler {
 
   }
 
-  public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
+
+
+  /*public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
     // TODO: your plugin is now attached to an Activity
     this.activity = activityPluginBinding.getActivity();
-  }
+  }*/
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
@@ -259,6 +262,26 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler {
     double time = cal.getTimeInMillis() / 1000;
     Double d = Double.valueOf(time);
     return Integer.toString(d.intValue());
+  }
+
+  @Override
+  public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+    this.activity = binding.getActivity();
+  }
+
+  @Override
+  public void onDetachedFromActivityForConfigChanges() {
+
+  }
+
+  @Override
+  public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
+
+  }
+
+  @Override
+  public void onDetachedFromActivity() {
+
   }
 
   // private void showNotice(String msg) {
