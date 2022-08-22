@@ -34,7 +34,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
   /// and unregister it
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
-  private static final String CHANNEL = "flutter_kpay";
+  private static final String CHANNEL = "flutter_kpay_kit";
   private static EventChannel.EventSink sink;
   private static final String TAG = "kpay";
   private String mOrderInfo;
@@ -54,7 +54,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), CHANNEL);
     channel.setMethodCallHandler(this);
     final EventChannel eventchannel = new EventChannel(flutterPluginBinding.getBinaryMessenger(),
-            "flutter_kpay/pay_status");
+            "flutter_kpay_kit/pay_status");
     eventchannel.setStreamHandler(new EventChannel.StreamHandler() {
       @Override
       public void onListen(Object o, EventChannel.EventSink eventSink) {

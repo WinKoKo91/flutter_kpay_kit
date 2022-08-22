@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 
 class FlutterKpayKit {
-  static const MethodChannel _channel = MethodChannel('flutter_kpay');
+  static const MethodChannel _channel = MethodChannel('flutter_kpay_kit');
   static const EventChannel _eventChannel =
-      EventChannel('flutter_kpay/pay_status');
+      EventChannel('flutter_kpay_kit/pay_status');
   static Stream<dynamic>? _streamPayStatus;
   static String prepay_id = "";
 
