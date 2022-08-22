@@ -70,12 +70,6 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
   }
 
 
-
-  /*public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
-    // TODO: your plugin is now attached to an Activity
-    this.activity = activityPluginBinding.getActivity();
-  }*/
-
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("createPay")) {
