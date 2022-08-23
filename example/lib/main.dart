@@ -34,9 +34,9 @@ class _MyAppState extends State<MyApp> {
 
   void startPay() {
     FlutterKpayKit.startPay(
-        merchCode: "100187778",
-        appId: "kp1234567890987654321abcdefghijk",
-        signKey: "123456",
+        merchCode: "10000",
+        appId: "kp4c1706c8675a45fghjklrskyf",
+        signKey: "123",
         orderId: "294",
         amount: 5000,
         title: "title",
