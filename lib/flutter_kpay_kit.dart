@@ -33,6 +33,7 @@ class FlutterKpayKit {
       'order_id': orderId,
       'amount': amount,
       'title': title,
+      'is_production': isProduction,
     });
     Dio dio = Dio();
     var options = Options(

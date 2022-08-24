@@ -47,7 +47,9 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
   private String mAmount = "0";
   private String mPrepayId = "";
   private String mMerchantOrderId = "";
+  private Boolean isProduction = false;
   private Activity activity;
+
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -84,6 +86,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
           mAmount = params.getString("amount");
           mTitle = params.getString("title");
           mMerchantOrderId = params.getString("order_id");
+          isProduction = params.getBoolean("is_production");
           String createOrderString = createOrder();
 
           result.success(createOrderString);
@@ -173,7 +176,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
       String nonceStr = createRandomStr();
       String timestamp = createTimestamp();
       String method = "kbz.payment.precreate";
-      String notifyUrl = "http://test.payment.com/notify";
+      String notifyUrl = isProduction ? "http://payment.com/notify": "http://test.payment.com/notify";
       JSONObject jsonObject = new JSONObject();
       JSONObject jsonRequest = new JSONObject();
       jsonObject.put("Request", jsonRequest);
