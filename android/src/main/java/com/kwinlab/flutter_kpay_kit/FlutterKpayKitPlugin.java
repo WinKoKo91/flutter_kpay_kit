@@ -178,7 +178,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
       String nonceStr = createRandomStr();
       String timestamp = createTimestamp();
       String method = "kbz.payment.precreate";
-      String notifyUrl = isProduction ? "http://payment.com/notify": "http://test.payment.com/notify";
+      String notifyUrl = isProduction ? "http://payment.com/notify": "http://payment.com/notify";
       JSONObject jsonObject = new JSONObject();
       JSONObject jsonRequest = new JSONObject();
       jsonObject.put("Request", jsonRequest);
