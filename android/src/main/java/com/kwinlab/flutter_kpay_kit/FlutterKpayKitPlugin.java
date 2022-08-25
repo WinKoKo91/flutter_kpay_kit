@@ -39,6 +39,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
   private static final String TAG = "kpay";
   private String mOrderInfo;
   private String mMerchantCode = "";
+  private String callbackInfo = "";
   private String mAppId = "";
   private String mSignKey = "";
   private String mSign = "";
@@ -87,6 +88,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
           mTitle = params.getString("title");
           mMerchantOrderId = params.getString("order_id");
           isProduction = params.getBoolean("is_production");
+          callbackInfo = params.getString("callback_info");
           String createOrderString = createOrder();
 
           result.success(createOrderString);
@@ -197,7 +199,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
       jsonContent.put("total_amount", mAmount);
       jsonContent.put("trans_currency", "MMK");
       jsonContent.put("timeout_express", "100m");
-      jsonContent.put("callback_info", "iphonex");
+      jsonContent.put("callback_info", callbackInfo);
       json = jsonObject.toString();
       return json;
     } catch (JSONException jex) {
@@ -214,7 +216,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
    */
   private String createOrderSign(String method, String nonceStr, String notifyUrl, String timestamp) {
     String str = "appid=" + mAppId +
-            "&callback_info=" + "iphonex" +
+            "&callback_info=" + callbackInfo +
             "&merch_code=" + mMerchantCode +
             "&merch_order_id=" + mMerchantOrderId +
             "&method=" + method +

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 
@@ -34,6 +36,7 @@ class FlutterKpayKit {
       'amount': amount,
       'title': title,
       'is_production': isProduction,
+      'callback_info': Platform.isAndroid? "Android":"iPhone"
     });
     Dio dio = Dio();
     var options = Options(
