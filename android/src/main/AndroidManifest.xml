@@ -4,6 +4,7 @@
     <application>
         <activity
             android:name="com.kbzbank.payment.sdk.callback.CallbackResultActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:exported="true" />
     </application>
 

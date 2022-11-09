@@ -26,4 +26,10 @@ public class CallbackResultActivity extends Activity {
             FlutterKpayKitPlugin.sendPayStatus(result, orderId);
         }
     }
+
+    @Override
+    protected void onResume() {
+        Log.i("onResum", "callback activity on Resume");
+        super.onResume();
+    }
 }

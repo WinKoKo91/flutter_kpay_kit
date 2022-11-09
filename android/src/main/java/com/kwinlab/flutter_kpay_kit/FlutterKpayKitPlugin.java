@@ -40,6 +40,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
   private String mOrderInfo;
   private String mMerchantCode = "";
   private String callbackInfo = "";
+  private String notifyUrl = "";
   private String mAppId = "";
   private String mSignKey = "";
   private String mSign = "";
@@ -89,6 +90,7 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
           mMerchantOrderId = params.getString("order_id");
           isProduction = params.getBoolean("is_production");
           callbackInfo = params.getString("callback_info");
+          notifyUrl =  params.getString("notify_url");
           String createOrderString = createOrder();
 
           result.success(createOrderString);
@@ -152,10 +154,14 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
 
   private void startPay() {
     buildOrderInfo();
+    Log.d(TAG,"<StartPay>");
     Log.d(TAG, mOrderInfo);
     Log.d(TAG, mSign);
+    Log.d(TAG, mSignType);
+    Log.d(TAG,"</StartPay>");
     KBZPay.startPay(this.activity, mOrderInfo, mSign, mSignType);
   }
+
 
   /**
    * Please create order in server side, this function just a demo.
@@ -178,7 +184,6 @@ public class FlutterKpayKitPlugin implements FlutterPlugin, MethodCallHandler , 
       String nonceStr = createRandomStr();
       String timestamp = createTimestamp();
       String method = "kbz.payment.precreate";
-      String notifyUrl = "http://payment.com/notify";
       JSONObject jsonObject = new JSONObject();
       JSONObject jsonRequest = new JSONObject();
       jsonObject.put("Request", jsonRequest);

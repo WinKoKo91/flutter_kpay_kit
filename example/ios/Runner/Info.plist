@@ -45,5 +45,9 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>LSApplicationQueriesSchemes</key>
+    	<array>
+    		<string>kbzpay</string>
+    	</array>
 </dict>
 </plist>

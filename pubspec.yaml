@@ -1,10 +1,11 @@
 name: flutter_kpay_kit
-description: A new Flutter project.
+description: KBZ mobile pay for Flutter.
 version: 0.0.1
-homepage:
+author: KwinLab
+homepage: https://github.com/Lolliwin/flutter_kpay_kit
 
 environment:
-  sdk: ">=2.17.6 <3.0.0"
+  sdk: '>=2.18.2 <3.0.0'
   flutter: ">=2.5.0"
 
 dependencies:
@@ -12,11 +13,13 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
   dio: ^4.0.6
+  pretty_dio_logger: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

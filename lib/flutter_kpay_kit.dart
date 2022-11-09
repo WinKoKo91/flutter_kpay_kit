@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class FlutterKpayKit {
   static const MethodChannel _channel = MethodChannel('flutter_kpay_kit');
@@ -22,7 +23,7 @@ class FlutterKpayKit {
       {required String merchCode,
       required String appId,
       required String signKey,
-      String? urlScheme,
+      String? urlScheme,  //Only Ios
       required String orderId,
       required double amount,
       required String title,
@@ -41,6 +42,12 @@ class FlutterKpayKit {
       'callback_info': Platform.isAndroid? "android":"iphone"
     });
     Dio dio = Dio();
+    dio.interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: true
+    ));
     var options = Options(
       headers: {"Content-Type": "application/json"},
     );
@@ -59,6 +66,10 @@ class FlutterKpayKit {
     prepay_id = response.data["Response"]["prepay_id"];
 
     print(prepay_id);
+
+    print(
+      "Start Pay Request param : { prepay_id : $prepay_id, merch_code: $merchCode, appid: $appId, sign_key: $signKey, 'url_scheme': $urlScheme}"
+    );
     final String data = await _channel.invokeMethod('startPay', {
       'prepay_id': prepay_id,
       'merch_code': merchCode,
