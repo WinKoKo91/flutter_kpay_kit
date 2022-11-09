@@ -3,6 +3,7 @@ description: KBZ mobile pay for Flutter.
 version: 0.0.1
 author: KwinLab
 homepage: https://github.com/Lolliwin/flutter_kpay_kit
+repository: https://github.com/Lolliwin/flutter_kpay_kit
 
 environment:
   sdk: '>=2.18.2 <3.0.0'
