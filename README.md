@@ -40,7 +40,7 @@ Payment callback, payment completion or payment cancellation, currently there ar
 
 ## Example
 ```dart
-import 'package:flutter_kbz_pay/flutter_kbz_pay.dart';
+import 'package:flutter_kpay_kit/flutter_kpay_kit.dart';
 
   void startPay() {
     FlutterKpayKit.startPay(
