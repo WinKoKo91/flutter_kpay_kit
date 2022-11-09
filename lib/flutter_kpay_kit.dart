@@ -26,6 +26,7 @@ class FlutterKpayKit {
       required String orderId,
       required double amount,
       required String title,
+        required String notifyURL,
       required bool isProduction}) async {
     final String orderString = await _channel.invokeMethod('createPay', {
       'merch_code': merchCode,
@@ -36,7 +37,8 @@ class FlutterKpayKit {
       'amount': amount,
       'title': title,
       'is_production': isProduction,
-      'callback_info': Platform.isAndroid? "Android":"iPhone"
+      "notify_url": notifyURL,
+      'callback_info': Platform.isAndroid? "android":"iphone"
     });
     Dio dio = Dio();
     var options = Options(
