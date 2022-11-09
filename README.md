@@ -12,6 +12,7 @@ dependencies:
   flutter_kpay_kit:latest version
 ```
 
+
 ## Usage
 ### Android
 android/app/src/main/manifest.xml
@@ -41,7 +42,8 @@ Payment callback, payment completion or payment cancellation, currently there ar
 ```dart
 import 'package:flutter_kbz_pay/flutter_kbz_pay.dart';
 
- FlutterKpayKit.startPay(
+  void startPay() {
+    FlutterKpayKit.startPay(
             merchCode: this.merchCode,
             // "10000",
             appId: this.appId,
@@ -59,7 +61,7 @@ import 'package:flutter_kbz_pay/flutter_kbz_pay.dart';
         .then((res) {
       print('startPay' + res.toString());
     });
-
+  }
 
     
   @override
