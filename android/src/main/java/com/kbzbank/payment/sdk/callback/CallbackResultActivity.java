@@ -25,6 +25,7 @@ public class CallbackResultActivity extends Activity {
             String orderId = intent.getStringExtra(KBZPay.EXTRA_ORDER_ID);
             FlutterKpayKitPlugin.sendPayStatus(result, orderId);
         }
+        finish();
     }
 
     @Override
