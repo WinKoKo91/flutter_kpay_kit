@@ -1,3 +1,5 @@
-## 0.0.1
+## **[0.0.2] - 14 NOV 22**
+- Fix Payment callback error
 
-* TODO: Describe initial release.
+## **[0.0.1] - 9 NOV 22**
+- Initial release, forked from a primary project.
