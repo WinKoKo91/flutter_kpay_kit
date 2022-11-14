@@ -20,10 +20,10 @@ dependencies:
 
 
 [UAT version](https://drive.google.com/drive/folders/1y8rwhg8tF35U_S5CKbROrR-FXI8B-0S7?usp=share_link)   
-- add uat kbzsdk.arr under yourproject/android/app/lib
+- add or overwirte uat kbzsdk.arr under yourproject/android/app/lib
 
 [Product version](https://drive.google.com/drive/folders/1YFiXmBNv1zAM4kZb32A8ujrMlG08pxd4?usp=share_link)  
-- add prod kbzsdk.arr under yourproject/android/app/lib
+- add or overwirte prod kbzsdk.arr under yourproject/android/app/lib
 
 
 
