@@ -14,8 +14,22 @@ dependencies:
 
 
 ## Usage
+
+
 ### Android
-android/app/src/main/manifest.xml
+
+
+[UAT version](https://drive.google.com/drive/folders/1y8rwhg8tF35U_S5CKbROrR-FXI8B-0S7?usp=share_link)   
+- add or overwirte uat kbzsdk.arr under yourproject/android/app/lib
+
+[Product version](https://drive.google.com/drive/folders/1YFiXmBNv1zAM4kZb32A8ujrMlG08pxd4?usp=share_link)  
+- add or overwirte prod kbzsdk.arr under yourproject/android/app/lib
+
+
+
+CallBack Function
+- add following code in android/app/src/main/manifest.xml
+
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 ....
@@ -35,8 +49,12 @@ ios/Runner/Info.plist
 ### Payment callback
 Payment callback, payment completion or payment cancellation, currently there are only two states. The callback parameter is returned as an OpenUrl, as shown below
 
+
 1：Pay for success，
-3：Payment failed, the remaining fields are reserved for later addition。
+2：Payment failed,
+3: Payment cancel
+
+the remaining fields are reserved for later addition。
 
 ## Example
 ```dart
