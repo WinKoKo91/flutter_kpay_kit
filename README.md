@@ -51,8 +51,8 @@ Payment callback, payment completion or payment cancellation, currently there ar
 
 
 1：Pay for success，
-2：Payment failed, 
-3: Payment Cancel
+2：Payment failed
+3: Payment cancel
 
 the remaining fields are reserved for later addition。
 
