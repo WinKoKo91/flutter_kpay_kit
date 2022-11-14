@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -23,11 +25,11 @@ class FlutterKpayKit {
       {required String merchCode,
       required String appId,
       required String signKey,
-      String? urlScheme,  //Only Ios
+      String? urlScheme, //Only Ios
       required String orderId,
       required double amount,
       required String title,
-        required String notifyURL,
+      required String notifyURL,
       required bool isProduction}) async {
     final String orderString = await _channel.invokeMethod('createPay', {
       'merch_code': merchCode,
@@ -39,15 +41,14 @@ class FlutterKpayKit {
       'title': title,
       'is_production': isProduction,
       "notify_url": notifyURL,
-      'callback_info': Platform.isAndroid? "android":"iphone"
+      'callback_info': Platform.isAndroid ? "android" : "iphone"
     });
     Dio dio = Dio();
     dio.interceptors.add(PrettyDioLogger(
         requestHeader: true,
         requestBody: true,
         responseBody: true,
-        responseHeader: true
-    ));
+        responseHeader: true));
     var options = Options(
       headers: {"Content-Type": "application/json"},
     );
@@ -62,14 +63,19 @@ class FlutterKpayKit {
         await dio.post(orderCreateApi, options: options, data: orderString);
     print(response);
 
+    String result = response.data["Response"]["result"];
+
+    if (result == "FAIL") {
+      return json.encode(response.data);
+    }
+
 
     prepay_id = response.data["Response"]["prepay_id"];
 
     print(prepay_id);
 
     print(
-      "Start Pay Request param : { prepay_id : $prepay_id, merch_code: $merchCode, appid: $appId, sign_key: $signKey, 'url_scheme': $urlScheme}"
-    );
+        "Start Pay Request param : { prepay_id : $prepay_id, merch_code: $merchCode, appid: $appId, sign_key: $signKey, 'url_scheme': $urlScheme}");
     final String data = await _channel.invokeMethod('startPay', {
       'prepay_id': prepay_id,
       'merch_code': merchCode,
