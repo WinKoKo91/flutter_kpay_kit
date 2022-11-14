@@ -49,8 +49,12 @@ ios/Runner/Info.plist
 ### Payment callback
 Payment callback, payment completion or payment cancellation, currently there are only two states. The callback parameter is returned as an OpenUrl, as shown below
 
+
 1：Pay for success，
-3：Payment failed, the remaining fields are reserved for later addition。
+2：Payment failed, 
+3: Payment Cancel
+
+the remaining fields are reserved for later addition。
 
 ## Example
 ```dart
