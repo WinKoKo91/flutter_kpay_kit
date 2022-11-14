@@ -1,5 +1,6 @@
 ## **[0.0.3] - 14 NOV 22**
 - Update Readme and Changelog documentation
+- Add response message for Payment Fail
 
 ## **[0.0.2] - 14 NOV 22**
 - Fixed Payment callback error
