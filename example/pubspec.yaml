@@ -1,4 +1,5 @@
 name: flutter_kpay_kit_example
+version: 1.0.0+1
 description: Demonstrates how to use the flutter_kpay_kit plugin.
 
 # The following line prevents the package from being accidentally published to

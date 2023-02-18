@@ -45,7 +45,7 @@ android {
 }
 
 dependencies {
-//    implementation files('libs/kbzsdk.jar')
+    //implementation files('libs/kbzsdk.jar')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation(name:'kbzsdk_1.1.0', ext:'aar')
     implementation 'com.android.support:multidex:1.0.3'
