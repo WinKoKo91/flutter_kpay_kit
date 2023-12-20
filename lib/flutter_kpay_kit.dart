@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -58,10 +57,10 @@ class FlutterKpayKit {
     } else {
       orderCreateApi = "http://api.kbzpay.com/payment/gateway/uat/precreate";
     }
-    print(orderString);
+    //print(orderString);
     Response response =
         await dio.post(orderCreateApi, options: options, data: orderString);
-    print(response);
+    //print(response);
 
     String result = response.data["Response"]["result"];
 
@@ -72,7 +71,7 @@ class FlutterKpayKit {
 
     prepay_id = response.data["Response"]["prepay_id"];
 
-    print(prepay_id);
+   // print(prepay_id);
 
     print(
         "Start Pay Request param : { prepay_id : $prepay_id, merch_code: $merchCode, appid: $appId, sign_key: $signKey, 'url_scheme': $urlScheme}");

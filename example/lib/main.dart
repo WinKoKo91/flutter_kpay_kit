@@ -20,7 +20,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String orderId = '123',
       merchCode = '10000',
-      appId = 'kp4c1706c8675a45fghjklrskyf',
+      appId = 'kp6540b7940f3b44f8b275ec26988062',
       signKey = '123';
   double amount = 5000;
 
