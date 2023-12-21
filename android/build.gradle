@@ -1,5 +1,5 @@
 group 'com.kwinlab.flutter_kpay_kit'
-version '1.0'
+version '0.0.5'
 
 buildscript {
     repositories {
@@ -46,7 +46,7 @@ android {
 
 dependencies {
 //    implementation files('libs/kbzsdk.jar')
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation(name:'kbzsdk_1.1.0', ext:'aar')
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:multidex:2.0.1'
 }

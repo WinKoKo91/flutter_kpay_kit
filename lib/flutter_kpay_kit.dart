@@ -20,7 +20,7 @@ class FlutterKpayKit {
     return _streamPayStatus!;
   }
 
-  static Future<String> startPay(
+  static Future<String> startPayment(
       {required String merchCode,
       required String appId,
       required String signKey,
@@ -68,15 +68,32 @@ class FlutterKpayKit {
       return json.encode(response.data);
     }
 
-
     prepay_id = response.data["Response"]["prepay_id"];
 
-   // print(prepay_id);
+    // print(prepay_id);
 
     print(
         "Start Pay Request param : { prepay_id : $prepay_id, merch_code: $merchCode, appid: $appId, sign_key: $signKey, 'url_scheme': $urlScheme}");
     final String data = await _channel.invokeMethod('startPay', {
       'prepay_id': prepay_id,
+      'merch_code': merchCode,
+      'appid': appId,
+      'sign_key': signKey,
+      'url_scheme': urlScheme,
+    });
+
+    return data;
+  }
+
+  static Future<String> connectKBZPay(
+      {required String prepayID,
+      required String merchCode,
+      required String appId,
+      required String signKey,
+      required String urlScheme}) async {
+
+    final String data = await _channel.invokeMethod('startPay', {
+      'prepay_id': prepayID,
       'merch_code': merchCode,
       'appid': appId,
       'sign_key': signKey,

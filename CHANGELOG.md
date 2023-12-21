@@ -1,3 +1,6 @@
+## **[0.0.5] - 21 DEC 23**
+- New method (connectKBZPay) for open KBZPay mobile application.
+
 ## **[0.0.4] - 20 DEC 23**
 - Update flutter version and package version.
 

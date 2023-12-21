@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void startPay() {
-    FlutterKpayKit.startPay(
+    FlutterKpayKit.startPayment(
             merchCode: merchCode,
             // "10000",
             appId: appId,
