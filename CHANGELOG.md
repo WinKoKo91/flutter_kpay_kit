@@ -1,3 +1,6 @@
+## **[0.0.6] - 22 DEC 23**
+- add iOS code for Kpay payment.
+
 ## **[0.0.5] - 21 DEC 23**
 - New method (connectKBZPay) for open KBZPay mobile application.
 

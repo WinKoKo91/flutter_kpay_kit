@@ -81,6 +81,25 @@ import 'package:flutter_kpay_kit/flutter_kpay_kit.dart';
     });
   }
 
+void openKpay() {
+  FlutterKpayKit.connectKBZPay(
+      prepayID: '123',
+      merchCode: '123',
+      appId: '123',
+      //Only Ios
+      urlScheme: 'https',
+      signKey: 'signKey')
+      .then((res) {
+    Map response = json.decode(res);
+    String result = response["Response"]["result"];
+    if (result == "FAIL") {
+      _messangerKey.currentState!.showSnackBar(
+        SnackBar(content: Text(response["Response"]["msg"])),
+      );
+    }
+  });
+}
+
     
   @override
   void initState() {
