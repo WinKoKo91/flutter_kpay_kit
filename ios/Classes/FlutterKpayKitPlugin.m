@@ -1,4 +1,4 @@
-#import "FlutterKbzPayPlugin.h"
+#import "FlutterKbzKitPlugin.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 #import <CommonCrypto/CommonHMAC.h>

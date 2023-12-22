@@ -1,3 +1,6 @@
+## **[0.0.7] - 22 DEC 23**
+- fix iOS bug for Kpay payment.
+
 ## **[0.0.6] - 22 DEC 23**
 - add iOS code for Kpay payment.
 
